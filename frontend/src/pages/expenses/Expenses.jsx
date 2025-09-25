@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { useExpenses } from "./hooks/useExpenses";
 import ExpenseToolbar from "./components/ExpenseToolbar";
 import ExpenseTable from "./components/ExpenseTable";
-import ExpenseForm from "../../components/expenses/ExpenseForm/ExpenseForm.jsx";
+import ExpenseForm from "../../components/expenses/ExpenseForm/ExpenseForm";
 
 const Expenses = () => {
     const [search, setSearch] = useState("");
