@@ -25,8 +25,8 @@ module.exports = (sequelize) => {
         //     foreignKey: 'raw_material_id',
         //     otherKey: 'production_id',
         // });
-        Production.hasMany(models.ProductionRawMaterial, { foreignKey: 'production_id' });
-        Production.hasMany(models.Sale, { foreignKey: 'id' });
+        Production.hasMany(models.ProductionRawMaterial, { foreignKey: 'raw_material_id' });
+        Production.hasMany(models.Sale, { foreignKey: 'production_id' });
         Production.belongsTo(models.ExpenseNameMaster, { foreignKey: 'product_id' });
 
     }

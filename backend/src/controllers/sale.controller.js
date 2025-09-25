@@ -67,7 +67,7 @@ exports.create = async (req, res) => {
         quantity: qty,
         amount: unitPrice,
         total_amount: qty * unitPrice,
-        status: 'PAID',
+        status: 'PENDING',
       },
       { transaction: t }
     );
