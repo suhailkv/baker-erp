@@ -33,7 +33,7 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import { useLocation } from 'react-router-dom';
 
 const navItems = [
-  { title: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
+  // { title: 'Dashboard', path: '/dashboard', icon: <DashboardIcon /> },
   { title: 'Raw Materials', path: '/raw-materials', icon: <InventoryIcon /> },
   { title: 'Production', path: '/production', icon: <ProductionIcon /> },
   { title: 'Sales', path: '/sales', icon: <SellIcon /> },
