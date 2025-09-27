@@ -1,9 +1,9 @@
-// src/components/layout/AppLayout.jsx
+// src/components/layout/Layout.jsx
 import React, { useState } from 'react';
 import { Box, useTheme, useMediaQuery } from '@mui/material';
 import Sidebar from './Sidebar';
 
-export default function AppLayout({ children }) {
+export default function Layout({ children }) {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -17,8 +17,6 @@ export default function AppLayout({ children }) {
       <Sidebar
         mobileOpen={mobileOpen}
         onMobileToggle={handleMobileToggle}
-        drawerWidth={280}
-        collapsedWidth={72}
       />
       
       <Box
@@ -29,21 +27,30 @@ export default function AppLayout({ children }) {
           flexDirection: 'column',
           minWidth: 0, // Prevents overflow issues
           bgcolor: 'background.default',
-          // Add top padding for mobile to account for the mobile header
-          pt: { xs: 0, md: 0 }
         }}
       >
-        {/* Page content container */}
-        <Box 
-          sx={{ 
-            p: { xs: 2, sm: 3 }, 
-            flex: 1,
-            overflow: 'auto' // Allows content to scroll if needed
-          }}
-        >
+        {/* Your page content */}
+        <Box sx={{ p: { xs: 2, sm: 3 }, flex: 1 }}>
           {children}
         </Box>
       </Box>
     </Box>
   );
 }
+
+// Example usage in your App component:
+// import Layout from './components/layout/Layout';
+//
+// function App() {
+//   return (
+//     <Router>
+//       <Layout>
+//         <Routes>
+//           <Route path="/dashboard" element={<Dashboard />} />
+//           <Route path="/raw-materials" element={<RawMaterials />} />
+//           {/* other routes */}
+//         </Routes>
+//       </Layout>
+//     </Router>
+//   );
+// }
